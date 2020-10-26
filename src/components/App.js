@@ -11,6 +11,7 @@ class App extends Component {
     };
     this.renderChoice = this.renderChoice.bind(this);
     this.buttonClickHandler = this.buttonClickHandler.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   //call back function
@@ -20,8 +21,11 @@ class App extends Component {
     });
   }
   handleKeyDown(event) {
-    if (event.KeyCode === 39) {
+    console.log(event);
+    if (event.keyCode === 39) {
+      console.log(event.code);
       const temp = this.state.posi + 5;
+      console.log(temp + "px");
       this.setState({
         posi: temp,
         ballPosition: { left: temp + "px" }
